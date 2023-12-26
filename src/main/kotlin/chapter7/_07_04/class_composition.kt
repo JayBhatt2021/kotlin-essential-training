@@ -1,7 +1,9 @@
 package chapter7._07_04
 
-/** Composition is better than inheritance since it ultimately produces smaller classes.
-To see the equivalent inheritance examples, look at steps 1-3 in composition.txt. **/
+/**
+ * Composition is better than inheritance since it ultimately produces smaller classes.
+ * To see the equivalent inheritance examples, look at steps 1-3 in composition.txt.
+ **/
 
 // IWorker Interface
 interface IWorker {
@@ -10,7 +12,7 @@ interface IWorker {
     fun doWork()
 }
 
-// Worker Class that Implements the IWorker Interface
+// Worker Class that implements the IWorker Interface
 class Worker(override val jobTitle: String) : IWorker {
     private var totalHours = 0.0
 
@@ -29,7 +31,7 @@ interface IBeing {
     fun getName(): String
 }
 
-// Being Class that Implements the IBeing Interface
+// Being Class that implements the IBeing Interface
 class Being(override val firstName: String) : IBeing {
     override fun getName(): String {
         return firstName
@@ -41,44 +43,45 @@ interface IPayment {
     fun calcPay(): Double
 }
 
-// HourlyPay Class that Implements the IPayment Interface
-class HourlyPay(val hourlyRate: Double) : IPayment {
+// HourlyPay Class that implements the IPayment Interface
+class HourlyPay(private val hourlyRate: Double) : IPayment {
     override fun calcPay(): Double {
         return hourlyRate
     }
 }
 
-// SalariedPay Class that Implements the IPayment Interface
-class SalariedPay(val yearlyRate: Double) : IPayment {
+// SalariedPay Class that implements the IPayment Interface
+class SalariedPay(private val yearlyRate: Double) : IPayment {
     override fun calcPay(): Double {
         return yearlyRate
     }
 }
 
-// NoPay Class that Implements the IPayment Interface
+// NoPay Class that implements the IPayment Interface
 class NoPay() : IPayment {
     override fun calcPay(): Double {
         return 0.0
     }
 }
 
-// Employee Class that Implements All Previous Interfaces
+// Employee Class that implements all previous interfaces
 class Employee(worker: IWorker, being: IBeing, pay: IPayment) :
     IWorker by worker, IBeing by being, IPayment by pay {
 }
 
 fun main() {
-    // Setting Up and Using an Hourly Pay Employee
-    val hourly = Employee(Worker("Bit Wrangler"), Being("Abel"), HourlyPay(42.42))
-    println("My name is ${hourly.getName()}.")
-    hourly.doWork()
+    // Setting up and using an Hourly Pay Employee
+    val hourlyEmployee = Employee(Worker("Bit Wrangler"), Being("Abel"), HourlyPay(42.42))
+    println("My name is ${hourlyEmployee.getName()}.")
+    hourlyEmployee.doWork()
 
-    // Setting Up and Using a Salaried Pay Employee
-    val salaried = Employee(Worker("Program Manager"), Being("Beth"), SalariedPay(100_000.0))
-    println("\nMy name is ${salaried.getName()}.")
-    salaried.doWork()
+    // Setting up and using a Salaried Pay Employee
+    val salariedEmployee =
+        Employee(Worker("Program Manager"), Being("Beth"), SalariedPay(100_000.0))
+    println("\nMy name is ${salariedEmployee.getName()}.")
+    salariedEmployee.doWork()
 
-    // Setting Up and Using a No Pay Employee
+    // Setting up and using a No Pay Employee
     val rescueDog = Employee(Worker("Rescue Dog"), Being("Fido"), NoPay())
     println("\nMy name is ${rescueDog.getName()}.")
     rescueDog.doWork()

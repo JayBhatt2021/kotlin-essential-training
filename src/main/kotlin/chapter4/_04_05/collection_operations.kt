@@ -6,24 +6,24 @@ fun main() {
     val map = mapOf(1 to 10, 2 to 20, 3 to 30)
 
     // Collection Operation #1: Transformations
-    val transformedList = list.map { element ->
-        element * 2
+    val transformedList = list.map {
+        it * 2
     }
     println("transformedList contains $transformedList.")
 
-    val transformedMap = map.map { mapEntry ->
-        Pair(mapEntry.key, mapEntry.value * 10)
+    val transformedMap = map.map {
+        Pair(it.key, it.value * 10)
     }.toMap()
     println("transformedMap contains $transformedMap.")
 
     // Collection Operation #2: Filtering
-    val filteredList = list.filter { element ->
-        element % 2 == 1
+    val filteredList = list.filter {
+        it % 2 == 1
     }
     println("\nfilteredList only contains odd values: $filteredList.")
 
-    val filteredSet = set.filter { element ->
-        element > 100
+    val filteredSet = set.filter {
+        it > 100
     }
     println("Is filteredSet empty? ${filteredSet.isEmpty()}")
 
@@ -32,8 +32,8 @@ fun main() {
     println("\ndescendingSet contains $descendingSet.")
 
     // Collection Operation #4: Retrieving an Element
-    val transformedListLastItem = transformedList.last { lastElement ->
-        lastElement > 2
+    val transformedListLastItem = transformedList.last {
+        it > 2
     }
     println("\nLast Item (if meets > 2 requirement): $transformedListLastItem")
 

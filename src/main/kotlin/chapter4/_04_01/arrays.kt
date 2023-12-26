@@ -28,11 +28,11 @@ fun main() {
         print("$student, ")
     }
 
-    // Array Initialization via the Array Constructor
+    // Array initialization via the array constructor:
     val fives = Array(5, ::fiver)
     print("\nThe following are the elements of the fives array: ")
-    fives.forEach { element ->
-        print("$element ")
+    fives.forEach {
+        print("$it ")
     }
 
     // Various Array Properties
@@ -43,8 +43,8 @@ fun main() {
     // Kotlin Homogenous Primitive Arrays
     val pInts = intArrayOf(1, 2, 3)
     print("\nThe pInts integer array contains the following elements: ")
-    pInts.forEach { element ->
-        print("$element ")
+    pInts.forEach {
+        print("$it ")
     }
 }
 

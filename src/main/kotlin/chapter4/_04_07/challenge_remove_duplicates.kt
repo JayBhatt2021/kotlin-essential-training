@@ -9,5 +9,5 @@ fun main() {
     val animalSet = animalList.toSet()
 
     println("List with duplicates: $animalList")
-    println("Set of Aforementioned List: $animalSet")
+    println("Set of the aforementioned list: $animalSet")
 }

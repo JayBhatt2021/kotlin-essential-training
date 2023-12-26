@@ -2,7 +2,7 @@ package chapter2._02_04
 
 fun main() {
     // Part One
-    val greeting: String = "Hello there!"
+    val greeting = "Hello there!"
     println(greeting)
 
     val owe = 50
@@ -18,13 +18,15 @@ fun main() {
 
     val bad = greeting.get(2)
     val moreConcise = greeting[0]
-    println("\ngreeting.get(2) returns $bad, and greeting[0] returns $moreConcise.")
+    println("\ngreeting.get(2) returns '$bad', and greeting[0] returns '$moreConcise'.")
     println("Use bracket notation rather than the String get method.")
 
     val compare1 = "beta"
     val compare2 = "alpha"
-    println("\n\"$compare1\".compareTo(\"$compare2\") returns ${compare1.compareTo(compare2)} since beta comes " +
-            "after alpha in the alphabet.")
+    println(
+        "\n\"$compare1\".compareTo(\"$compare2\") returns ${compare1.compareTo(compare2)} since beta comes after " +
+                "alpha in the alphabet."
+    )
 
     val sub = greeting.subSequence(6, 9)
     println("\ngreeting.subSequence(6, 9) produces \"$sub\".")

@@ -1,7 +1,7 @@
 package chapter3._03_04
 
 fun main() {
-    //    Traditional C-style loop
+    //    Traditional C-style loop:
     //    for (int i = 0; i < 10; i++) {
     //        println("i = $i")
     //    }
@@ -17,9 +17,9 @@ fun main() {
         println("The current student is $student.")
     }
 
-    println("\nUsing withIndex() to access loop indices and collection values")
+    println("\nUsing withIndex() to access loop indices and collection values:")
     for ((index, student) in students.withIndex()) {
-        println("Student #${index + 1}): $student")
+        println("Student #${index + 1}: $student")
     }
 
     println("\nWhile Loop (5 -> 1):")
@@ -28,14 +28,14 @@ fun main() {
         println("While Count = $count")
         count--
     }
-    println("Current count (outside while): $count")
+    println("Current count (outside while loop): $count")
 
     println("\nDo-while Loop (0 -> 4):")
     do {
         println("Do-while Count = $count")
         count++
     } while (count < 5)
-    println("Current count (outside do-while): $count")
+    println("Current count (outside do-while loop): $count")
 
     println("\nDemonstration of the break and continue statement:")
     while (count > 0) {

@@ -10,7 +10,7 @@ fun main() {
         else -> "platinum"
     }
 
-    // Determines point plurality and print statement syntax
-    val plural: String = if (cardPoints > 1 || cardPoints == 0) "s" else ""
+    // Determines point plurality and print-statement syntax
+    val plural: String = if (cardPoints == 1) "" else "s"
     println("You have $cardPoints point$plural and are at the $cardLevel level.")
 }

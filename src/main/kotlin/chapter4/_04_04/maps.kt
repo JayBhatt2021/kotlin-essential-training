@@ -6,18 +6,17 @@ fun main() {
     val readOnlyMapTwo = mapOf(4 to "delta", 3 to "gamma", 2 to "beta", 1 to "alpha")
     println("Is readOnlyMapOne equal to readOnlyMapTwo? ${readOnlyMapOne == readOnlyMapTwo}")
 
+    // Accessing map values:
+    println("\nreadOnlyMapOne.get(2) returns \"${readOnlyMapOne.get(2)}\".")
+    println("readOnlyMapOne[5] returns \"${readOnlyMapOne[5]}\".")
 
-    // Accessing Map Values
-    println("\nreadOnlyMapOne.get(2) returns ${readOnlyMapOne.get(2)}.")
-    println("readOnlyMapOne[5] returns ${readOnlyMapOne[5]}.")
-
-    // Returning Non-null Values for Invalid Keys
+    // Returning non-null values for invalid keys:
     println(
         "\nreadOnlyMapOne.getOrDefault(6, \"No match!\") returns " +
-                "${readOnlyMapOne.getOrDefault(6, "No match!")}."
+                "\"${readOnlyMapOne.getOrDefault(6, "No match!")}\"."
     )
 
-    // Mutable Maps and Their Methods
+    // Mutable maps and their methods:
     val mutableCarMap = mutableMapOf(
         "Ford" to 1903, "G.M." to 1908, "Dodge" to 1913, "Tucker" to 1944
     )
@@ -26,10 +25,10 @@ fun main() {
     println("\nmutableCarMap.remove(\"Tucker\") returns ${mutableCarMap.remove("Tucker")}.")
     println("Updated mutableCarMap: $mutableCarMap")
 
-    // keys/values Property and the in Membership Operator
+    // keys/values property and the in membership operator:
     print("\nmutableCarMap has the following keys: ")
     for (key in mutableCarMap.keys) {
-        print("$key ")
+        print("\"$key\" ")
     }
 
     print("\nmutableCarMap has the following values: ")

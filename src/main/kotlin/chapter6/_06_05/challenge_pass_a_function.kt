@@ -1,14 +1,14 @@
 package chapter6._06_05
 
 fun main() {
-    // Function Calling a Defined Lambda Function
+    // Function calling a defined lambda function:
     replicate { times, string ->
         for (index in 1..times)
             println(string)
     }
 }
 
-// Function that Accepts a Specific Function
+// Function that accepts a specific function:
 fun replicate(func: (Int, String) -> Unit) {
     func(3, "Be Cool.")
 }

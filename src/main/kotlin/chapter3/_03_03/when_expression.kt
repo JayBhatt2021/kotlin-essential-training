@@ -5,7 +5,7 @@ enum class Suit {
 }
 
 fun main() {
-    // When-expression basics
+    // When-expressions - Basics
     val x = 1
     when (x) {
         1 -> println("x == 1")
@@ -13,7 +13,8 @@ fun main() {
         3, 4 -> println("x == 3 or x == 4")
     }
 
-    // Else statement not required for assignment variable if when-expression is exhaustive
+    // The else-statement isn't required for the assignment variable
+    // if the when-expression is exhaustive:
     val card = Suit.Spade
     val y = when (card) {
         Suit.Club, Suit.Spade -> println("\n$card is a black card.")
@@ -21,7 +22,7 @@ fun main() {
     }
     println("The value of y is $y.")
 
-    // When-expressions don't have to compare just integers.
+    // When-expressions don't have to compare only integers:
     val firstName = "Jay"
     val lastName = when (firstName) {
         "Bob" -> "Jones"

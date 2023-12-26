@@ -2,20 +2,20 @@ package chapter5._05_02
 import java.util.Scanner
 
 fun main() {
-    // Basics of Obtaining User Input
+    // Basics of obtaining user input
     print("Enter text: ")
-    val txt = readLine() ?: ""
-    println("You entered: $txt, with its length = ${txt.length}.")
+    val txt = readlnOrNull() ?: ""
+    println("You entered: \"$txt\", with its length = ${txt.length}.")
 
-    // Reading an Integer
-    print("\nEnter an Integer Value: ")
-    val stringOne = readLine() ?: ""
+    // Reading an integer:
+    print("\nEnter an integer value: ")
+    val stringOne = readlnOrNull() ?: ""
     val integerValue: Int = stringOne.toIntOrNull() ?: 0
     println("You entered: $integerValue.")
 
-    // Reading a Double
-    print("\nEnter a Double Value: ")
-    val stringTwo = readLine() ?: ""
+    // Reading a double:
+    print("\nEnter a double value: ")
+    val stringTwo = readlnOrNull() ?: ""
     val doubleValue: Double = stringTwo.toDoubleOrNull() ?: 0.0
     println("You entered: $doubleValue.")
 
@@ -23,13 +23,13 @@ fun main() {
 }
 
 fun scanner() {
-    // Receiving Number Inputs using a Scanner Object
+    // Receiving number inputs using a Scanner object:
     val scanner = Scanner(System.`in`)
-    print("\nEnter an Integer Number: ")
+    print("\nEnter an integer number: ")
     val numberOne = scanner.nextInt()
-    print("Enter a Double Number: ")
+    print("Enter a double number: ")
     val numberTwo = scanner.nextDouble()
 
-    // Printing the Aforementioned Number Inputs
-    println("Your Integer Number is $numberOne, and your Double Number is $numberTwo.")
+    // Printing the aforementioned number inputs:
+    println("Your integer number is $numberOne, and your double number is $numberTwo.")
 }

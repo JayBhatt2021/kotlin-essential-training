@@ -16,7 +16,7 @@ class CantCreate private constructor(val message: String) {
             return CantCreate(message)
         }
 
-        // Accessing the Class Instance via passing in its Reference
+        // Accessing the class instance via passing in its reference:
         fun sillyPrint(self: CantCreate) {
             println("Accessing \"${self.message}\"")
         }
@@ -24,20 +24,20 @@ class CantCreate private constructor(val message: String) {
 }
 
 fun main() {
-    // Cannot Create Objects from Private Class Constructors
+    // Cannot create objects from private class constructors:
     // val c1 = CantCreate("Example Message")
 
-    // Using a Companion Object's Factory Method for Object Instantiation
+    // Using a companion object's factory method for object instantiation:
     val c1 = CantCreate.factory("Example Message")
 
-    // Displaying the Message
+    // Displaying the message:
     print("Message: ")
     c1.showMessage()
 
-    // Demonstrating Companion Object Access to its Class Instance
+    // Demonstrating companion object access to its class instance:
     print("\nCantCreate.sillyPrint(c1) yields: ")
     CantCreate.sillyPrint(c1)
 
-    // Printing a Companion Object Constant
+    // Printing a companion object constant:
     println("\nThe speed of light is ${CantCreate.LIGHT_SPEED} m/s.")
 }

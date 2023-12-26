@@ -3,35 +3,35 @@ package chapter7._07_01
 // Basic Class Definition
 class BasicClass {}
 
-// Shorter (but Dubious) Class Definition
+// Shorter (but dubious) Class Definition
 class ShortClass
 
 // Class with a Primary Constructor
 class WithPrimaryConstructor constructor(name: String, age: Int) {}
 
-// Shorter Primary Constructor Definition (only with Public Constructors)
+// Shorter Primary Constructor Definition (only with public constructors)
 class ShortPrimaryConstructor(name: String, age: Int) {}
 
-// Primary Constructor With Internal Visibility Modifier (Constructor callable only in the Same File)
+// Primary Constructor with an Internal Visibility Modifier (constructor callable only in the same file)
 class InternalPrimaryConstructor internal constructor(name: String, age: Int) {}
 
-// Primary Constructor With A Class Property (Differently Named from Parameter)
+// Primary Constructor with a Class Property (named differently from parameter)
 class CourseProperty(courseTitle: String) {
     val title = courseTitle
 }
 
 // Class Property Shortcuts
-// firstName = immutable property (val)
-// lastName = NOT a property (no val/var keyword in the constructor AND no assignment statement in the class)
-// age = mutable property (var)
+// firstName == immutable property (val)
+// lastName != property (no val/var keyword in the constructor AND no assignment statement in the class)
+// age == mutable property (var)
 class Person(val firstName: String, lastName: String, var age: Int) {}
 
-// Class With A Getter
+// Class with a Getter
 class Course(courseTitle: String) {
     private val title = courseTitle
     internal var description = ""
         get() {
-            return if (field.isNullOrBlank()) "no description" else "$field!"
+            return if (field.isBlank()) "no description" else "$field!"
         }
 
     // Member Function
@@ -51,5 +51,5 @@ fun main() {
 
     print("Course Title: ")
     course.show()
-    println("The overridden toString function allows println(course) to print \"${course}\"")
+    println("The overridden toString function allows println(course) to print \"${course}\".")
 }

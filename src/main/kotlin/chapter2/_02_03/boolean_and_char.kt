@@ -2,12 +2,12 @@ package chapter2._02_03
 
 fun firstOperand(): Boolean {
     println("firstOperand")
-    return false;
+    return false
 }
 
 fun secondOperand(): Boolean {
     println("secondOperand")
-    return true;
+    return true
 }
 
 fun main() {
@@ -34,13 +34,13 @@ private fun demoBoolean() {
         println("Both operands are true.\n")
     }
 
-    // Part Four
+    // Part Four (Not Operator)
     println("\nwillExercise = ${!willExercise}\n")
 }
 
 private fun demoChar() {
     // Part One
-    val letter: Char = 'A'
+    val letter = 'A'
     val tab = '\t'
     val infinity = '\u221E'
 
@@ -50,5 +50,5 @@ private fun demoChar() {
 
     // Part Two
     val lineFeed = 10.toChar()
-    println("line feed =$lineFeed(10.toChar() indicates the next line in ASCII)")
+    println("line feed =$lineFeed(10.toChar() indicates the next line in ASCII.)")
 }

@@ -7,7 +7,7 @@ fun main() {
 
     // Kotlin Set Properties and Methods
     println("\nThe size of the threes set is ${threes.size}.")
-    println("Is 4 in the set? ${threes.contains(4)}")
+    println("Is 4 in the threes set? ${threes.contains(4)}")
 
     // Kotlin Mutable Sets
     val mutableSetOne = mutableSetOf(1, 2, 3, 4, 5)
@@ -29,11 +29,11 @@ fun main() {
 
     // More Mutable Set Methods
     println("\nWas 6 added to mutableSetOne? ${mutableSetOne.add(6)}")
-    println("Was 76 removed from mutableSetOne ${mutableSetOne.remove(76)}")
+    println("Was 76 removed from mutableSetOne? ${mutableSetOne.remove(76)}")
 
-    // Turning a Set into a List
+    // Turning a set into a list:
     val newList = hashSetOne.toList()
-    println("\nhashSetOne is converted to the following list $newList.")
+    println("\nhashSetOne is converted to the following list: $newList.")
     println("Unlike with a set, the get method can be used with a list: ${newList.get(1)}.")
     println("In addition to the indexOf operator: ${newList[1]}.")
 }

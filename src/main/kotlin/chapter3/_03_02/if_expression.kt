@@ -1,11 +1,11 @@
 package chapter3._03_02
 
 fun main() {
-    // Proper Way to Assign an If-Expression to a Variable
-    val bigger = 101
+    // Proper way to assign an if-Expression to a variable:
     val smaller = 1
-    val max = if (bigger > smaller) bigger else smaller
-    println("The value of max is $max.")
+    val bigger = 101
+    val min = if (smaller < bigger) smaller else bigger
+    println("The value of min is $min.")
 
     // If test cases overlap, the first conditional match wins!
     if (bigger > 10) {
@@ -16,7 +16,7 @@ fun main() {
         println("\nThe value of bigger is not too big.")
     }
 
-    // If-expression can return values of different types.
+    // The if-expression can return values of different types.
     // If this is the case, make your assignment variable of type Any.
     val number = 121
     val bucket: Any = if (number > 100) {
@@ -31,7 +31,7 @@ fun main() {
         println("\nThe value of number is 80 or less.")
         1
     }
-    println("The value of the bucket assignment variable is $bucket.")
+    println("The value of bucket is $bucket.")
 
     // Don't redundantly return booleans from if-expressions.
     // val isGreater = if (number > 100) true else false
